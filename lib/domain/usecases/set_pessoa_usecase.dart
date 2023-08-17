@@ -3,6 +3,8 @@ import 'dart:io';
 import '../entities/pessoa.dart';
 
 class SetPessoaUsecase {
+  SetPessoaUsecase();
+
   Pessoa call() {
     return Pessoa(
       nome: _nameFromTerminal(),

@@ -6,15 +6,18 @@ void main(List<String> arguments) {
   print('\t\t\t\tPROJETO_IMC iniciado');
   print('=' * 80);
   final setPessoaUsecase = SetPessoaUsecase();
-  final getImcUsecase = GetImcUsecase();
   final pessoa = setPessoaUsecase();
-  final result = getImcUsecase(
+  final getImcUsecase = GetImcUsecase(
     altura: pessoa.altura,
     peso: pessoa.peso,
-  ).toStringAsFixed(2);
+  );
+  final imcValue = getImcUsecase.value();
+  final imc = getImcUsecase.label();
+
   print('=' * 80);
   print('\t\t\t\tResultado');
   print('=' * 80);
-  print('Seu IMC é $result');
+  print('Seu IMC é $imcValue');
+  print(imc);
   print('-' * 80);
 }
